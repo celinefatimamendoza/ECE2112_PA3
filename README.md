@@ -71,6 +71,10 @@ b. For `Pontiac Firebird`, display only `Model`, `mpg`, `hp`, and `wt`.
 Store the two results in `toyota` and `pontiac`, respectively. Do not use a hard-coded row number to locate either model.  
 
   ### Function:  
+   ~ **.loc[]** -  
+
+  *Example:*  
+  ```cars.loc[(cars['Model'] == 'Toyota Corolla')]```, ```cars.loc[(cars['Model'] == 'Pontiac Firebird'), ['Model', 'mpg', 'hp', 'wt']]```
 
 ```python
 toyota = cars.loc[(cars['Model'] == 'Toyota Corolla')]
@@ -87,14 +91,27 @@ display(pontiac)
 Create a DataFrame named `selected_cars` containing only the records for three models: `Datsun 710`, `Lotus Europa`, and `Ferrari Dino`.  
 For these records, retain only `Model`, `mpg`, `cyl`, `hp`, and `gear`. Select the rows by their model values rather than by row numbers. Display `selected_cars` and its shape.  
 
-  ### Function:  
+  ### Function: 
+  ~ **.loc[]** -
 
+  *Example:*  
+  ```cars.loc[(cars['Model'] == 'Datsun 710') | (cars['Model'] == 'Lotus Europa') | (cars['Model'] == 'Ferrari Dino'), ['Model', 'mpg', 'cyl', 'hp', 'gear']]```  
+  
 ```python
 selected_cars = cars.loc[(cars['Model'] == 'Datsun 710') | (cars['Model'] == 'Lotus Europa') | (cars['Model'] == 'Ferrari Dino'), ['Model', 'mpg', 'cyl', 'hp', 'gear']]
 
 display(selected_cars)
 print("Selected cars shape = ", selected_cars.shape)
 ```
+
+
+#### *Thank you for reading!*  
+  
+  
+**README file Version History**   
+*September 10, 2026* - Published the repository (included files: 1 .csv, 1 .ipynb, and README.md).  
+*September 11, 2026* - Completed the content of the README file.
+
 
 
   
