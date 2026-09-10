@@ -24,25 +24,25 @@ b. Using positional slicing, create `cars_6_to_10` containing rows **6** through
 c. From `cars_6_to_10`, display only the columns `Model`, `mpg`, `cyl`, `hp`, and `gear`, in that order.  
 
 ### Function:  
-  ~ **.read_csv()** -  
+  ~ **.read_csv()** - This reads the comma-separated values (CSV) inside the parentheses and imports the data from that file, allowing the user or coder to manipulate or filter the dataset through programming.   
 
   *Example:*  
-  ```pd.read_csv('cars.csv')``` -  
+  ```pd.read_csv('cars.csv')```  
 
-  ~ **.columns.tolist()** -  
+  ~ **.columns.tolist()** - The '.columns' function extracts the column labels of the table data. The '.tolist()' function converts these collected labels into a list.  
 
   *Example:*
-    ```cars.columns.tolist()``` -  
+    ```cars.columns.tolist()```  
 
-  ~ **.iloc[]** -  
-
-  *Example:*  
-  ```cars.iloc[5:10]``` -  
-
-  ~ **.loc[]** -  
+  ~ **.iloc[]** - This stands for integer-location-based indexing, which can be used for selecting rows and columns by their integer position.  
 
   *Example:*  
-  ```cars_6_to_10.loc[:, ['Model', 'mpg', 'cyl', 'hp', 'gear']]``` -  
+  ```cars.iloc[5:10]``` - The '.iloc[]' function is exclusive, making this syntax start the table from row 5 and end at row 9.  
+
+  ~ **.loc[]** - This is used to select and access the data from the rows and columns via their labels.   
+
+  *Example:*  
+  ```cars_6_to_10.loc[:, ['Model', 'mpg', 'cyl', 'hp', 'gear']]``` - The '.loc[]' function is inclusive, allowing all the listed labels to be included in the output table. The colon in the first parameter indicates the index of the row to be contained.  
 
 ```python
 import pandas as pd
@@ -68,13 +68,13 @@ display(selected_columns)
 Use Boolean indexing on the `Model` column to answer both requests.  
 a. Display the complete row for `Toyota Corolla`.  
 b. For `Pontiac Firebird`, display only `Model`, `mpg`, `hp`, and `wt`.  
-Store the two results in `toyota` and `pontiac`, respectively. Do not use a hard-coded row number to locate either model.  
+Store the two results in `toyota` and `pontiac`, respectively. Do not use a hard-coded row number to locate either model.   
 
   ### Function:  
-   ~ **.loc[]** -  
+   ~ **.loc[]** - This is used to select and access the data from the rows and columns via their labels. 
 
   *Example:*  
-  ```cars.loc[(cars['Model'] == 'Toyota Corolla')]```, ```cars.loc[(cars['Model'] == 'Pontiac Firebird'), ['Model', 'mpg', 'hp', 'wt']]```
+  ```cars.loc[(cars['Model'] == 'Toyota Corolla')]```, ```cars.loc[(cars['Model'] == 'Pontiac Firebird'), ['Model', 'mpg', 'hp', 'wt']]``` - Both examples exhibit Boolean indexing, conditioning that the `Model` label must be either the Toyota Corolla or the Pontiac Firebird in order for the program to execute.  
 
 ```python
 toyota = cars.loc[(cars['Model'] == 'Toyota Corolla')]
@@ -92,10 +92,10 @@ Create a DataFrame named `selected_cars` containing only the records for three m
 For these records, retain only `Model`, `mpg`, `cyl`, `hp`, and `gear`. Select the rows by their model values rather than by row numbers. Display `selected_cars` and its shape.  
 
   ### Function: 
-  ~ **.loc[]** -
+  ~ **.loc[]** - This is used to select and access the data from the rows and columns via their labels.  
 
   *Example:*  
-  ```cars.loc[(cars['Model'] == 'Datsun 710') | (cars['Model'] == 'Lotus Europa') | (cars['Model'] == 'Ferrari Dino'), ['Model', 'mpg', 'cyl', 'hp', 'gear']]```  
+  ```cars.loc[(cars['Model'] == 'Datsun 710') | (cars['Model'] == 'Lotus Europa') | (cars['Model'] == 'Ferrari Dino'), ['Model', 'mpg', 'cyl', 'hp', 'gear']]```  - This example is similar to the one given in problem B; it is just that the condition is set for multiple kinds of models, prompting us to use the *OR* statement.  
   
 ```python
 selected_cars = cars.loc[(cars['Model'] == 'Datsun 710') | (cars['Model'] == 'Lotus Europa') | (cars['Model'] == 'Ferrari Dino'), ['Model', 'mpg', 'cyl', 'hp', 'gear']]
