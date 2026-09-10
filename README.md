@@ -29,7 +29,7 @@ c. From `cars_6_to_10`, display only the columns `Model`, `mpg`, `cyl`, `hp`, an
   *Example:*  
   ```pd.read_csv('cars.csv')```  
 
-  ~ **.columns.tolist()** - The '.columns' function extracts the column labels of the table data. The '.tolist()' function converts these collected labels into a list.  
+  ~ **.columns.tolist()** - The '.columns' attribute extracts the column labels of the table data. The '.tolist()' function converts these collected labels into a list.  
 
   *Example:*
     ```cars.columns.tolist()```  
@@ -42,7 +42,7 @@ c. From `cars_6_to_10`, display only the columns `Model`, `mpg`, `cyl`, `hp`, an
   ~ **.loc[]** - This is used to select and access the data from the rows and columns via their labels.   
 
   *Example:*  
-  ```cars_6_to_10.loc[:, ['Model', 'mpg', 'cyl', 'hp', 'gear']]``` - The '.loc[]' function is inclusive, allowing all the listed labels to be included in the output table. The colon in the first parameter indicates the index of the row to be contained.  
+  ```cars_6_to_10.loc[:, ['Model', 'mpg', 'cyl', 'hp', 'gear']]``` - The '.loc[]' function is inclusive, so it includes all listed labels in the output table. The colon in the first parameter indicates that all rows must be included.  
 
 ```python
 import pandas as pd
